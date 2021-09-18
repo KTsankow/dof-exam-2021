@@ -9,7 +9,7 @@ spec:
       app: exam-app-web
   minReadySeconds: 10
   strategy:
-    type: RollingUpdate
+    type: RollingUpdatehttps://github.com/KTsankow/dof-exam-2021/blob/main/app2/yaml/app.yaml
     rollingUpdate:
       maxUnavailable: 1
       maxSurge: 1
@@ -19,8 +19,8 @@ spec:
         app: exam-app-web
     spec:
       containers:
-      - name: web-cont
-        image: %IMAGE-NAME%:%IMAGE-TAG%
+      - name: web-host
+        image: ktsankow/dofweb:latest
         ports:
         - containerPort: 80 
 ---
@@ -47,7 +47,7 @@ metadata:
     app: exam-app-db
 spec:
   containers:
-  - name: db-cont
+  - name: db-host
     image: redis
     ports:
     - containerPort: 6379 
